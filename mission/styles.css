@@ -54,3 +54,12 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
+
+.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark h2 {
+  color: #a0d4ed;
+}
