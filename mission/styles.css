@@ -26,6 +26,7 @@ body {
   padding-bottom: 50px;
   padding-left: 100px;
   padding-right: 100px;
+  border: 1px solid #808080;
 }
 
 .paragraph-one {
