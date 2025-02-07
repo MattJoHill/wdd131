@@ -23,8 +23,24 @@ function viewerTemplate(pic, alt) {
 
 function viewHandler(event) {
   const clickedElement = event.target;
-  const src = clickedElement.src;
+  const source = clickedElement.src;
+  const splitSource = source.split("-");
+  const newSource = splitSource[0] + "-full.jpeg";
+  const htmlToInsert = viewerTemplate(newSource, "Full image view");
+  document.body.insertAdjacentHTML("afterbegin", htmlToInsert);
+  const closeButton = document.querySelector(".closeViewer");
+  closeButton.addEventListener("click", function () {
+    const viewer = closeButton.closest(".viewer");
+    if (viewer) {
+      viewer.remove();
+    }
+  });
 }
+
+const images = document.querySelectorAll("img");
+images.forEach((image) => {
+  image.addEventListener("click", viewHandler);
+});
 
 handleResize();
 window.addEventListener("resize", handleResize);
